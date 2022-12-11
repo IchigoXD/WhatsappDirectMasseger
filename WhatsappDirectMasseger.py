@@ -8,13 +8,14 @@ WAdomain = "https://wa.me/"
 print('\n')
 number = input("What is the number that massege want to send?  \n> ")
 print('\n')
-isthisSriLankan = True if input('Is this number Sri Lankan? (Yes/No) \n> ').capitalize() == 'Yes' else False
+# isthisLocal = True if input('Is this number Local? (Yes/No) \n> ').capitalize() == 'Yes' else False
 print('\n')
 
 if number[0]=='0' and number[1]=='0':
     WAnumber = '+' + number[2:]
-elif number[0]=='0' and isthisSriLankan:
-    WAnumber = '+94' + number[1:]
+elif number[0]=='0' and isthisLocal:
+    Ccode = input('Enter your contry code. Like this ' +81 ' , ' +94 ' \n> ')
+    WAnumber = Ccode + number[1:]
 elif number[0]=='+':
     WAnumber = number
 else:
